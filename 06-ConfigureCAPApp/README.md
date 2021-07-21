@@ -69,6 +69,7 @@ In this how to guide, you will clone an existing CAP application in SAP Business
 14. Run the application locally in your SAP Business Application Studio environment by executing the following command in the root directory of your project in the terminal:
 
     ```
+    npam install
     cds watch
     ```
 
@@ -90,15 +91,19 @@ In this how to guide, you will clone an existing CAP application in SAP Business
  
     - Follow the process by entering the credentials of your SAP BTP account and by selecting the Cloud Foundry org and space you want to deploy the application to.
 
-15. Build the Multi-Target Application Archive (MTA Archive) by executing the following command in the root directory of your project in the terminal:
+16. Build the Multi-Target Application Archive (MTA Archive) by executing the following command in the root directory of your project in the terminal:
 
     ```
     mbt build -e trial.mtaext
     ```
+    Note - for live environment we can use the below command instead
+    ```
+    mbt build -e live.mtaext
+    ```
 
 >this will produce a .mtar file in the mta_archives directory. Some of the values for the service instance creation depend on the environment you are deploying to, that's why the *-e* for *extension* is used here. 
 
-16. Deploy the application to SAP BTP, Cloud Foundry Runtime by executing the following command in the root directory of your project in the terminal:
+17. Deploy the application to SAP BTP, Cloud Foundry Runtime by executing the following command in the root directory of your project in the terminal:
 
     ```
     cf deploy mta_archives/BusinessPartnerVerification_1.2.0.mtar
