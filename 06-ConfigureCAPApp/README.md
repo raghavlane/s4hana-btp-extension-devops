@@ -69,7 +69,7 @@ In this how to guide, you will clone an existing CAP application in SAP Business
 14. Run the application locally in your SAP Business Application Studio environment by executing the following command in the root directory of your project in the terminal:
 
     ```
-    npam install
+    npm install
     cds watch
     ```
 
